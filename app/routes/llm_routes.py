@@ -8,7 +8,7 @@ router = APIRouter(prefix="/llm", tags=["LLM"])
 
 # Configure Gemini
 genai.configure(api_key=settings.GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 @router.post("/ask-llm", response_model=LLMResponse)
 def ask_llm(payload: LLMRequest, current_user=Depends(get_current_user)):
